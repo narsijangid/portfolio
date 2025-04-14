@@ -1,0 +1,200 @@
+/* Statistics Section Styles */
+.statistics-section {
+    min-height: 100vh;
+    padding: 10rem 9% 2rem;
+    background: var(--bg-color);
+}
+
+.statistics-section .newheading {
+    text-align: center;
+    font-size: 4.5rem;
+    margin-bottom: 5rem;
+}
+
+.statistics-section .newheading span {
+    color: var(--main-color);
+}
+
+.stats-container {
+    display: flex;
+    flex-direction: column;
+    gap: 4rem;
+    padding: 0 2rem;
+}
+
+.github-calendar {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.calendar-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+
+.calendar-title {
+    font-size: 2rem;
+    color: var(--text-color);
+}
+
+.calendar-year {
+    font-size: 1.6rem;
+    color: var(--main-color);
+}
+
+.calendar-container {
+    width: 100%;
+    overflow-x: auto;
+    padding: 1rem 0;
+}
+
+/* GitHub Calendar Custom Styles */
+.calendar {
+    width: 100%;
+    min-height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: var(--text-color);
+    font-size: 1.6rem;
+}
+
+/* Hide statistics */
+.calendar .contrib-column,
+.calendar .contrib-number,
+.calendar .text-muted,
+.calendar .contrib-footer {
+    display: none !important;
+}
+
+.calendar .calendar-graph {
+    width: 100% !important;
+    height: auto !important;
+}
+
+.calendar .calendar-graph rect {
+    fill: var(--bg-color) !important;
+}
+
+.calendar .calendar-graph text {
+    fill: var(--text-color) !important;
+}
+
+.calendar .calendar-graph rect[fill="#ebedf0"] {
+    fill: var(--bg-color) !important;
+}
+
+.calendar .calendar-graph rect[fill="#9be9a8"] {
+    fill: var(--main-color) !important;
+    opacity: 0.6;
+}
+
+.calendar .calendar-graph rect[fill="#40c463"] {
+    fill: var(--main-color) !important;
+    opacity: 0.8;
+}
+
+.calendar .calendar-graph rect[fill="#30a14e"] {
+    fill: var(--main-color) !important;
+    opacity: 0.9;
+}
+
+.calendar .calendar-graph rect[fill="#216e39"] {
+    fill: var(--main-color) !important;
+}
+
+.calendar-legend {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--text-color);
+}
+
+.legend-color {
+    width: 15px;
+    height: 15px;
+    border-radius: 2px;
+}
+
+.stats-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 2rem;
+}
+
+.stat-card {
+    background: var(--second-bg-color);
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.stat-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+.stat-icon {
+    font-size: 3rem;
+    color: var(--main-color);
+    margin-bottom: 1rem;
+}
+
+.stat-number {
+    font-size: 2.5rem;
+    color: var(--text-color);
+    margin-bottom: 0.5rem;
+}
+
+.stat-label {
+    font-size: 1.6rem;
+    color: var(--text-color);
+    opacity: 0.8;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+    .statistics-section .newheading {
+        font-size: 3.5rem;
+    }
+
+    .calendar-header {
+        flex-direction: column;
+        gap: 1rem;
+        text-align: center;
+    }
+
+    .calendar-legend {
+        justify-content: center;
+    }
+
+    .stats-cards {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 480px) {
+    .calendar {
+        min-width: 800px;
+    }
+    
+    .calendar-container {
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+    }
+} 

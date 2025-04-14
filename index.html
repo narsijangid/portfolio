@@ -1,0 +1,784 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Personal Portfolio</title>
+
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="project.css">
+    <link rel="stylesheet" href="resume.css">
+    <link rel="stylesheet" href="statistics.css">
+    <link rel="stylesheet" href="footer.css">
+
+    <!-- box icons -->
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
+
+
+    <style>
+        @keyframes bgAnimation {
+          0% { background-position: 0% 50%; }
+          50% { background-position: 100% 50%; }
+          100% { background-position: 0% 50%; }
+        }
+    
+        .animated-wrapper {
+          position: relative;
+          height: 400px;
+          width: 370px;
+          margin-left: 60px;
+          border-radius: 10px;
+          overflow: hidden;
+          box-shadow: 0 0 30px rgba(0, 217, 255, 0.7), 0 0 50px rgba(0, 217, 255, 0.3);
+          z-index: 1;
+        }
+    
+        .animated-wrapper::before {
+          content: "";
+          position: absolute;
+          top: -50%;
+          left: -50%;
+          width: 200%;
+          height: 200%;
+          background: conic-gradient(skyblue, transparent, skyblue);
+          animation: borderSpin 3s linear infinite;
+          z-index: 1;
+        }
+    
+        .animated-wrapper::after {
+          content: "";
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          right: 6px;
+          bottom: 6px;
+          border-radius: 10px;
+          background: #ffffff;
+          z-index: 2;
+        }
+    
+        .image-container {
+          position: absolute;
+          top: 6px;
+          left: 6px;
+          right: 6px;
+          bottom: 6px;
+          border-radius: 10px;
+          overflow: hidden;
+          z-index: 3;
+        }
+    
+        .image-container img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover;
+          transition: transform 0.2s ease, opacity 0.3s ease;
+        }
+    
+        .image-container:hover img {
+          opacity: 0.5; /* Darken image */
+          animation: pain 0.2s infinite;
+        }
+    
+        .code-overlay {
+          position: absolute;
+          top: 0;
+          left: 0;
+          height: 100%;
+          width: 100%;
+          background: rgba(0, 0, 0, 0.3);
+          backdrop-filter: blur(3px);
+          color: #00f0ff;
+          font-size: 12px;
+          padding: 0px;
+          opacity: 0.6;
+          z-index: 4;
+          overflow: hidden;
+        }
+    
+        .code-scroll {
+          position: absolute;
+          width: 100%;
+          animation: scrollCode 10s linear infinite;
+          white-space: pre;
+          font-family: 'Courier New', Courier, monospace;
+          text-shadow: 0 0 5px #03a100, 0 0 10px #00ff33, 0 0 15px #00ff1e;
+        }
+    
+        @keyframes scrollCode {
+          0% { top: 100%; }
+          100% { top: -100%; }
+        }
+    
+        @keyframes borderSpin {
+          0% { transform: rotate(0deg); }
+          100% { transform: rotate(400deg); }
+        }
+    
+        @keyframes pain {
+          0% { transform: translate(0, 0); }
+          25% { transform: translate(-2px, 2px); }
+          50% { transform: translate(2px, -2px); }
+          75% { transform: translate(-2px, -2px); }
+          100% { transform: translate(0, 0); }
+        }
+
+        @media (max-width: 768px) {
+    .image-container img {
+      display: none; /* Hide the image on mobile devices */
+
+
+ 
+    }
+
+
+
+    .animated-wrapper {
+      display: none;
+        }
+}
+    </style>
+</head>
+
+<body>
+
+    <!-- header design -->
+    <header class="header">
+        <a href="#" class="logo">Portfolio.<span class="animate" style="--i:1;"></span></a>
+
+        <div class="bx bx-menu" id="menu-icon"><span class="animate" style="--i:2;"></span></div>
+
+        <nav class="navbar">
+            <a href="#home" class="active">Home</a>
+            <a href="#about">About</a>
+            <a href="#education">Education</a>
+            <a href="#skills">Skills</a>
+            <a href="#statistics">Statistics</a>
+            <a href="#projects">Projects</a>
+            <a href="#contact">Contact</a>
+
+            <span class="active-nav"></span>
+            <span class="animate" style="--i:2;"></span>
+        </nav>
+    </header>
+
+    <!-- home section design -->
+    <section class="home show-animate" id="home">
+        <div class="home-content">
+            <h1>Hi, I'm <span>Narsi Jangid</span><span class="animate" style="--i:2;"></span></h1>
+            <div class="text-animate">
+                <h3>Full stack Developer</h3>
+                <span class="animate" style="--i:3;"></span>
+            </div>
+            <p>I am a Full Stack Developer skilled in front-end technologies like HTML, CSS, JavaScript, and React, as well as back-end tools such as Node.js, Express, and MongoDB. I focus on writing clean code, building responsive web apps, and creating smooth user experiences. Passionate about solving problems and bringing ideas to life.
+                <span class="animate" style="--i:4;"></span>
+            </p>
+
+            <div class="btn-box">
+                <a href="https://drive.google.com/file/d/1Dldwm6GECabembD3GgDzqSNu9h6IW9jN/view?usp=sharing" target="_blank" class="btn" id="resume-btn">
+                    <i class='bx bxs-file-pdf'></i> Resume
+                </a>
+                <a href="#" class="btn">Let's Talk</a>
+                <span class="animate" style="--i:5;"></span>
+            </div>
+        </div>
+
+        <div class="home-sci">
+           
+            <a href="https://github.com/narsijangid" target="_blank"><i class='bx bxl-github'></i></a>
+            <a href="https://x.com/narsijangid07" target="_blank" ><i class='bx bxl-twitter'></i></a>
+            <a href="https://www.linkedin.com/in/narsi-jangid-3b54ab297/" target="_blank" ><i class='bx bxl-linkedin'></i></a>
+            <span class="animate" style="--i:6;"></span>
+        </div>
+
+        <div class="home-imgHover"></div>
+        <span class="animate home-img" style="--i:7;"></span>
+ 
+      <!-- -------------------------------------------------------------------------------- -->
+
+        <div class="animated-wrapper">
+            <div class="image-container">
+              <img src="https://i.ibb.co/21SpqBtb/Whats-App-Image-2025-04-13-at-11-06-59-PM-1.jpg" alt="Portfolio Image">
+            </div>
+            <div class="code-overlay">
+              <div class="code-scroll">
+          <pre>
+            // toggle icon navbar
+            let menuIcon = document.querySelector('#menu-icon');
+            let navbar = document.querySelector('.navbar');
+            
+            menuIcon.onclick = () => {
+                menuIcon.classList.toggle('bx-x');
+                navbar.classList.toggle('active');
+            }
+            
+            // scroll sections
+            let sections = document.querySelectorAll('section');
+            let navLinks = document.querySelectorAll('header nav a');
+            
+            window.onscroll = () => {
+                sections.forEach(sec => {
+                    let top = window.scrollY;
+                    let offset = sec.offsetTop - 100;
+                    let height = sec.offsetHeight;
+                    let id = sec.getAttribute('id');
+            
+                    if(top >= offset && top < offset + height) {
+                        // active navbar links
+                        navLinks.forEach(links => {
+                            links.classList.remove('active');
+                            document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+                        });
+                        // active sections for animation on scroll
+                        sec.classList.add('show-animate');
+                    }
+                    // if want to animation that repeats on scroll use this
+                    else {
+                        sec.classList.remove('show-animate');
+                    }
+                });
+            
+                // sticky navbar
+                let header = document.querySelector('header');
+            
+                header.classList.toggle('sticky', window.scrollY > 100);
+            
+                // remove toggle icon and navbar when click navbar links (scroll)
+                menuIcon.classList.remove('bx-x');
+                navbar.classList.remove('active');
+            
+                // animation footer on scroll
+                let footer = document.querySelector('footer');
+            
+                footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
+            }
+            // toggle icon navbar
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+}
+
+// scroll sections
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            // active navbar links
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+            // active sections for animation on scroll
+            sec.classList.add('show-animate');
+        }
+        // if want to animation that repeats on scroll use this
+        else {
+            sec.classList.remove('show-animate');
+        }
+    });
+
+    // sticky navbar
+    let header = document.querySelector('header');
+
+    header.classList.toggle('sticky', window.scrollY > 100);
+
+    // remove toggle icon and navbar when click navbar links (scroll)
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+
+    // animation footer on scroll
+    let footer = document.querySelector('footer');
+
+    footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
+}
+// toggle icon navbar
+let menuIcon = document.querySelector('#menu-icon');
+let navbar = document.querySelector('.navbar');
+
+menuIcon.onclick = () => {
+    menuIcon.classList.toggle('bx-x');
+    navbar.classList.toggle('active');
+}
+
+// scroll sections
+let sections = document.querySelectorAll('section');
+let navLinks = document.querySelectorAll('header nav a');
+
+window.onscroll = () => {
+    sections.forEach(sec => {
+        let top = window.scrollY;
+        let offset = sec.offsetTop - 100;
+        let height = sec.offsetHeight;
+        let id = sec.getAttribute('id');
+
+        if(top >= offset && top < offset + height) {
+            // active navbar links
+            navLinks.forEach(links => {
+                links.classList.remove('active');
+                document.querySelector('header nav a[href*=' + id + ']').classList.add('active');
+            });
+            // active sections for animation on scroll
+            sec.classList.add('show-animate');
+        }
+        // if want to animation that repeats on scroll use this
+        else {
+            sec.classList.remove('show-animate');
+        }
+    });
+
+    // sticky navbar
+    let header = document.querySelector('header');
+
+    header.classList.toggle('sticky', window.scrollY > 100);
+
+    // remove toggle icon and navbar when click navbar links (scroll)
+    menuIcon.classList.remove('bx-x');
+    navbar.classList.remove('active');
+
+    // animation footer on scroll
+    let footer = document.querySelector('footer');
+
+    footer.classList.toggle('show-animate', this.innerHeight + this.scrollY >= document.scrollingElement.scrollHeight);
+}
+
+          </pre>
+              </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- about section design -->
+    <section class="about" id="about">
+        <h2 class="heading">About <span>Me</span><span class="animate scroll" style="--i:1;"></span></h2>
+
+        <div class="about-img">
+            <img src="https://i.ibb.co/r2RmfQdW/Whats-App-Image-2025-04-13-at-7-44-12-PM-1.jpg" alt="">
+            <span class="circle-spin"></span>
+            <span class="animate scroll" style="--i:2;"></span>
+        </div>
+
+        <div class="about-content">
+            <h3>Hi there! Glad to see you here.<span class="animate scroll" style="--i:3;"></span></h3>
+            <p>My name is Narsi Jangid, a passionate and disciplined Full Stack Web Developer. I have recently completed an intensive full stack development course from Masai School, where I gained in-depth knowledge of modern technologies along with essential soft skills. During the program, I worked on multiple real-world projects in collaborative team environments, enhancing my problem-solving abilities, communication, and leadership skills. With a strong foundation in both frontend and backend development, I am now ready to take on challenging opportunities and contribute effectively to impactful tech solutions.   <span class="animate scroll" style="--i:4;"></span>
+            </p>
+
+            <div class="btn-box btns">
+                <a href="#contact" class="btn">Contact Me</a>
+                <span class="animate scroll" style="--i:5;"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- education section design -->
+    <section class="education" id="education">
+        <h2 class="heading">My <span>Journey</span><span class="animate scroll" style="--i:1;"></span></h2>
+
+        <div class="education-row">
+            <div class="education-column">
+                <h3 class="title">Education<span class="animate scroll" style="--i:2;"></span></h3>
+
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2023 - 2026</div>
+                            <h3>Bachelor of Computer Applications – Manipal University</h3>
+                            <p> pursuing BCA from Manipal University, focusing on core computer science subjects and practical skills in software development and programming.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2021 - 2022</div>
+                            <h3>Dayanand School (12th) - PCM</h3>
+                            <p>Completed 12th with PCM (Physics, Chemistry, Mathematics), building a strong base in logical reasoning and problem-solving, ideal for STEM fields.</p>
+                        </div>
+                    </div>
+
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2020 - 2021</div>
+                            <h3>Veer Teja School</h3>
+                            <p>Scored 90% in 10th grade, demonstrating strong academic performance and dedication.</p>
+                        </div>
+                    </div>
+
+                    <span class="animate scroll" style="--i:3;"></span>
+                </div>
+            </div>
+
+            <div class="education-column">
+                <h3 class="title">Experience<span class="animate scroll" style="--i:5;"></span></h3>
+
+                <div class="education-box">
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2024 - 2025</div>
+                            <h3>Training at Masai School</h3>
+                            <p>Gained hands-on experience and learned valuable skills in [mention key skills, e.g., coding, problem-solving] during a 7-month training program, enhancing my practical knowledge and industry insights.</p>
+                        </div>
+                    </div>
+
+                    <!-- <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2018 - 2019</div>
+                            <h3>Web Developer - Company</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Blanditiis dolorem harum
+                                dolorum debitis. Magni, iste! Perferendis
+                                laborum reprehenderit dolorum totam.</p>
+                        </div>
+                    </div> -->
+<!-- 
+                    <div class="education-content">
+                        <div class="content">
+                            <div class="year"><i class='bx bxs-calendar'></i> 2019 - 2020</div>
+                            <h3>Web Developer - Company</h3>
+                            <p>Lorem ipsum dolor, sit amet consectetur
+                                adipisicing elit. Blanditiis dolorem harum
+                                dolorum debitis. Magni, iste! Perferendis
+                                laborum reprehenderit dolorum totam.</p>
+                        </div>
+                    </div> -->
+
+                    <span class="animate scroll" style="--i:6;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- skills section design -->
+    <section class="skills" id="skills">
+        <h2 class="heading">My <span>Skills</span><span class="animate scroll" style="--i:1;"></span></h2>
+
+        <div class="skills-row">
+            <div class="skills-column">
+                <h3 class="title">Frontend Skills<span class="animate scroll" style="--i:2;"></span></h3>
+
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>HTML <span>90%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>CSS <span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>JavaScript <span>65%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>React.js <span>75%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Redux <span>82%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Tailwind.css <span>62%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                        <div class="progress">
+                            <h3>Version Control (Git)<span>75%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+                    </div>
+
+                    <span class="animate scroll" style="--i:3;"></span>
+                </div>
+            </div>
+
+            <div class="skills-column">
+                <h3 class="title">Backend Skills<span class="animate scroll" style="--i:5;"></span></h3>
+
+                <div class="skills-box">
+                    <div class="skills-content">
+                        <div class="progress">
+                            <h3>Node.js<span>80%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Express.js<span>77%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>MongoDB<span>85%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>RESTful APIs<span>75%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>JWT<span>75%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        <div class="progress">
+                            <h3>Server-Side Rendering (SSR)<span>77%</span></h3>
+                            <div class="bar"><span></span></div>
+                        </div>
+
+                        
+                    </div>
+
+                    <span class="animate scroll" style="--i:6;"></span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- statistics section design -->
+    <section class="statistics-section" id="statistics">
+        <h1 class="newheading">My <span>Statistics</span></h1>
+
+        <div class="stats-container">
+            <div class="github-calendar">
+                <div class="calendar-header">
+                    <h3 class="calendar-title">GitHub Contributions</h3>
+                    <span class="calendar-year">2024</span>
+                </div>
+                <div class="calendar-container">
+                    <div class="calendar">
+                        Loading the data just for you.
+                    </div>
+                </div>
+                <div class="calendar-legend">
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #ebedf0;"></div>
+                        <span>No contributions</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #9be9a8;"></div>
+                        <span>1-9 contributions</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #40c463;"></div>
+                        <span>10-19 contributions</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #30a14e;"></div>
+                        <span>20-29 contributions</span>
+                    </div>
+                    <div class="legend-item">
+                        <div class="legend-color" style="background: #216e39;"></div>
+                        <span>30+ contributions</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="stats-cards">
+                <div class="stat-card">
+                    <i class='bx bxs-star stat-icon'></i>
+                    <h3 class="stat-number">138</h3>
+                    <p class="stat-label">Total Stars</p>
+                </div>
+                <div class="stat-card">
+                    <i class='bx bxs-repo stat-icon'></i>
+                    <h3 class="stat-number">18</h3>
+                    <p class="stat-label">Repositories</p>
+                </div>
+                <div class="stat-card">
+                    <i class='bx bxs-user stat-icon'></i>
+                    <h3 class="stat-number">7</h3>
+                    <p class="stat-label">Followers</p>
+                </div>
+                <div class="stat-card">
+                    <i class='bx bxs-git-branch stat-icon'></i>
+                    <h3 class="stat-number">89</h3>
+                    <p class="stat-label">Pull Requests</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- projects section design -->
+    <section class="projects-section" id="projects">
+        <h1 class="newheading">My <span>Projects</span></h2>
+
+        <div class="projects-grid">
+            <!-- Project 1 -->
+            <div class="project-card animate-projects" style="--i:2;">
+                <div class="project-card-content">
+                    <img src="https://repository-images.githubusercontent.com/649027923/7420cf87-507b-40b9-8dcc-8e2370d10f3d" alt="Project 1" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">AirBNB clone Website</h3>
+                        <p class="project-description">Airnest is a web application inspired by Airbnb, designed to allow users to explore and book accommodations. This project is a clone of the Airbnb website </p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="contributors">
+                        <img src="https://avatars.githubusercontent.com/u/149683470?s=64&v=4" alt="Contributor 1" class="contributor-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/181089838?s=64&v=4" alt="Contributor 2" class="contributor-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/150539120?s=64&v=4" alt="Contributor 3" class="contributor-avatar">
+                    </div>
+                    <a href="https://airnest.vercel.app/" target="_blank" class="live-url-btn" onclick="event.stopPropagation()">Live URL</a>
+                </div>
+            </div>
+
+            <!-- Project 2 -->
+            <div class="project-card animate-projects" style="--i:3;">
+                <div class="project-card-content">
+                    <img src="https://i.ibb.co/pBSSYzBJ/Screenshot-2025-04-14-113423.png" alt="Project 2" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">E-commerce website</h3>
+                        <p class="project-description">online marketplace designed to enhance the shopping experience by offering a vast range of products across multiple categories.</p>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <div class="contributors">
+                        <img src="https://avatars.githubusercontent.com/u/119521377?s=96&v=4" alt="Contributor 1" class="contributor-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/149683470?s=96&v=4" alt="Contributor 2" class="contributor-avatar">
+                        <img src="https://avatars.githubusercontent.com/u/143515005?s=64&v=4" alt="Contributor 2" class="contributor-avatar">
+                    </div>
+                    <a href="https://narsijangid.github.io/B42_WEB_003_Web-Wizards/" class="live-url-btn" onclick="event.stopPropagation()">Live URL</a>
+                </div>
+            </div>
+
+            <!-- Project 3 -->
+            <div class="project-card animate-projects" style="--i:4;">
+                <div class="project-card-content">
+                    <img src="https://i.ibb.co/JjyT6WvS/Screenshot-2025-04-14-131707.png" alt="Project 3" class="project-image">
+                    <div class="project-content">
+                        <h3 class="project-title">Job portal</h3>
+                        <p class="project-description">its a job portal website where you can find jobs and apply for them. and its also help for job provider to post jobs and find empoyeers.
+                </div>
+                <div class="project-footer">
+                    <div class="contributors">
+                        <img src="https://avatars.githubusercontent.com/u/149683470?v=4" alt="Contributor 1" class="contributor-avatar">
+                      
+                    </div>
+                    <a href="job-portalllll.netlify.app/" class="live-url-btn" onclick="event.stopPropagation()">Live URL</a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Project Popup -->
+        <div class="project-popup">
+            <div class="popup-content">
+                <i class='bx bx-x popup-close'></i>
+                <h3 class="popup-title">Project Details</h3>
+                <ul class="contributors-list">
+                    <li class="contributor-item">
+                        <i class='bx bxl-github'></i>
+                        <div class="contributor-info">
+                            <span class="contributor-name">Narsi jangid</span>
+                            <span class="contributor-github">@narsijangid</span>
+                        </div>
+                    </li>
+                    <li class="contributor-item">
+                        <i class='bx bxl-github'></i>
+                        <div class="contributor-info">
+                            <span class="contributor-name">smith bemal</span>
+                            <span class="contributor-github">@smith-bimal</span>
+                        </div>
+                    </li>
+                    <li class="contributor-item">
+                        <i class='bx bxl-github'></i>
+                        <div class="contributor-info">
+                            <span class="contributor-name">sai suman maharana</span>
+                            <span class="contributor-github">@saisuman</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- contact section design -->
+    <section class="contact" id="contact">
+        <h2 class="heading">Contact <span>Me</span><span class="animate scroll" style="--i:1;"></span></h2>
+
+        <form id="contactForm" action="https://formspree.io/f/narsijangid@gmail.com" method="POST">
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="text" name="name" placeholder="Full Name" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="email" name="email" placeholder="Email" required>
+                    <span class="focus"></span>
+                </div>
+
+                <span class="animate scroll" style="--i:3;"></span>
+            </div>
+            <div class="input-box">
+                <div class="input-field">
+                    <input type="number" name="phone" placeholder="Mobile Number" required>
+                    <span class="focus"></span>
+                </div>
+                <div class="input-field">
+                    <input type="text" name="subject" placeholder="Email Subject" required>
+                    <span class="focus"></span>
+                </div>
+
+                <span class="animate scroll" style="--i:5;"></span>
+            </div>
+
+            <div class="textarea-field">
+                <textarea name="message" id="" cols="30" rows="10" placeholder="Your Message" required></textarea>
+                <span class="focus"></span>
+
+                <span class="animate scroll" style="--i:7;"></span>
+            </div>
+
+            <div class="btn-box btns">
+                <button type="submit" class="btn">Submit</button>
+
+                <span class="animate scroll" style="--i:9;"></span>
+            </div>
+        </form>
+    </section>
+
+    <!-- footer design -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="copyright">
+                Copyright © 2025 Portfolio by Narsi Jangid
+            </div>
+            <a href="#home" class="back-to-top">
+                <i class='bx bx-up-arrow-alt'></i>
+                Back to Top
+            </a>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+    <script src="project.js"></script>
+    <script src="resume.js"></script>
+    <script src="statistics.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/github-calendar@latest/dist/github-calendar.min.js"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/github-calendar@latest/dist/github-calendar-responsive.css"/>
+    <script>
+        GitHubCalendar(".calendar", "narsijangid", {
+            responsive: true,
+            tooltips: true,
+            global_stats: false,
+            summary_text: ""
+        });
+    </script>
+</body>
+
+</html>
