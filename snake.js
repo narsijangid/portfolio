@@ -1,3 +1,6 @@
+const canvas = document.createElement('canvas');
+canvas.id = 'snake-canvas';
+document.body.appendChild(canvas);
 
 var Input = {
     keys: [],
