@@ -781,6 +781,21 @@ window.onscroll = () => {
             global_stats: false,
             summary_text: ""
         });
+
+
+          document.addEventListener("DOMContentLoaded", function () {
+    // Image path set karo
+    const imageUrl = "https://static.vecteezy.com/system/resources/thumbnails/032/058/256/small/cursor-icon-illustration-3d-render-element-png.png"; // 👈 Apni image ka path yahaan do
+
+    // CSS style dynamically apply karo
+    const style = document.createElement("style");
+    style.innerHTML = `
+      body {
+        cursor: url(${imageUrl}), auto;
+      }
+    `;
+    document.head.appendChild(style);
+  });
     </script>
           
 </body>
