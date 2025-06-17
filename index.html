@@ -148,10 +148,35 @@
       display: none;
         }
 }
+
+
+
+        body {
+  cursor: none; /* Hide default cursor */
+}
+
+#custom-cursor {
+  position: fixed;
+  top: 0;
+  left: 0;
+  pointer-events: none; /* Don't block clicks */
+  z-index: 9999;
+  transform: translate(-50%, -50%);
+}
+
+#custom-cursor img {
+  width: 60px; /* Change to 100px or 100% of what you want */
+  height: 60px;
+  object-fit: contain;
+}
+
     </style>
 </head>
 
 <body>
+<div id="custom-cursor">
+  <img src="https://static.vecteezy.com/system/resources/thumbnails/032/058/256/small/cursor-icon-illustration-3d-render-element-png.png" alt="cursor">
+</div>
 
     <!-- header design -->
     <header class="header">
@@ -792,7 +817,14 @@ window.onscroll = () => {
 
         
     </script>
+   <script>
+  const customCursor = document.getElementById("custom-cursor");
 
+  window.addEventListener("mousemove", (e) => {
+    customCursor.style.top = e.clientY + "px";
+    customCursor.style.left = e.clientX + "px";
+  });
+</script>
          
 </body>
 
