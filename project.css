@@ -67,6 +67,7 @@
 .project-footer {
     display: flex;
     justify-content: space-between;
+  
     align-items: center;
     padding: 1rem 1.5rem;
     background: rgba(0, 0, 0, 0.05);
@@ -287,3 +288,7 @@
         font-size: 2rem;
     }
 } 
+
+
+
+
