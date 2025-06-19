@@ -150,24 +150,6 @@
   cursor: none; /* Hide default cursor */
 }
 
-        body :hover{
-  cursor: none;
-}
-#custom-cursor {
-  position: fixed;
-  top: 0;
-  left: 0;
-  pointer-events: none; /* Don't block clicks */
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-}
-
-#custom-cursor img {
-  width: 30px; /* Change to 100px or 100% of what you want */
-  height: 30px;
-  object-fit: contain;
-}
-
         
     </style>
 </head>
@@ -667,6 +649,8 @@ window.onscroll = () => {
                         <img src="https://avatars.githubusercontent.com/u/150539120?s=64&v=4" alt="Contributor 3" class="contributor-avatar">
                     </div>
                     <a href="https://airnest.vercel.app/" target="_blank" class="live-url-btn" onclick="event.stopPropagation()">Live URL</a>
+                 <a href="https://github.com/narsijangid/AirBNB-clone" target="_blank" class="live-url-btn" onclick="event.stopPropagation()">GitHub</a>
+ 
                 </div>
             </div>
 
@@ -686,6 +670,8 @@ window.onscroll = () => {
                         <img src="https://avatars.githubusercontent.com/u/143515005?s=64&v=4" alt="Contributor 2" class="contributor-avatar">
                     </div>
                     <a href="https://narsijangid.github.io/B42_WEB_003_Web-Wizards/" class="live-url-btn" onclick="event.stopPropagation()">Live URL</a>
+                  <a href="https://github.com/narsijangid/AirBNB-clone" target="_blank" class="live-url-btn" onclick="event.stopPropagation()">GitHub</a>
+ 
                 </div>
             </div>
 
@@ -703,6 +689,9 @@ window.onscroll = () => {
                       
                     </div>
                     <a href="job-portalllll.netlify.app/" class="live-url-btn" onclick="event.stopPropagation()">Live URL</a>
+                      <a href="https://github.com/narsijangid/AirBNB-clone" target="_blank" class="live-url-btn" onclick="event.stopPropagation()">GitHub</a>
+ 
+                
                 </div>
             </div>
         </div>
@@ -798,9 +787,7 @@ window.onscroll = () => {
             </a>
         </div>
     </footer>
-            <div id="custom-cursor">
-  <img src="https://static.vecteezy.com/system/resources/thumbnails/032/058/256/small/cursor-icon-illustration-3d-render-element-png.png" alt="cursor">
-</div>
+         
 
     <script src="script.js"></script>
     <script src="project.js"></script>
@@ -819,14 +806,7 @@ window.onscroll = () => {
 
         
     </script>
-   <script>
-  const customCursor = document.getElementById("custom-cursor");
-
-  window.addEventListener("mousemove", (e) => {
-    customCursor.style.top = e.clientY + "px";
-    customCursor.style.left = e.clientX + "px";
-  });
-</script>
+   
          
 </body>
 
