@@ -9,8 +9,33 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Sample project data (replace with your actual project data)
     const projects = [
+          {
+            title: 'YummyGo: A Food Delivery Website',
+            skills: ['React.js', 'Node.js', 'Express', 'MongoDB'],
+            contributors: [
+                { 
+                    name: ' Narsi Jangid', 
+                    github: '@narsijangid',
+                    image: 'https://avatars.githubusercontent.com/u/149683470?v=4'
+                }
+              
+            ]
+        },
+          {
+            title: 'Orbito Ai – AI-Powered Conversational Assistant',
+            skills: ['HTML', 'CSS', 'JavaScript'],
+            contributors: [
+                { 
+                    name: ' Narsi Jangid', 
+                    github: '@narsijangid',
+                    image: 'https://avatars.githubusercontent.com/u/149683470?v=4'
+                }
+              
+            ]
+        },
+        
         {
-            title: 'E-commerce Website',
+            title: 'AirBNB clone Website',
             skills: ['HTML', 'CSS', 'JavaScript', 'firebase'],
             contributors: [
                 { 
@@ -52,8 +77,19 @@ document.addEventListener('DOMContentLoaded', function() {
             ]
         },
         {
-            title: 'Weather Dashboard',
-            skills: ['HTML', 'CSS', 'JavaScript'    ],
+            title: 'Job portal',
+            skills: ['html', 'css', 'js', 'Firebase'],
+            contributors: [
+                { 
+                    name: 'Narsi jangid', 
+                    github: '@narsijangid',
+                    image: 'https://avatars.githubusercontent.com/u/149683470?v=4'
+                }
+            ]
+        },
+          {
+            title: 'Application similar like YouTube',
+            skills: ['html', 'css', 'js'],
             contributors: [
                 { 
                     name: 'Narsi jangid', 
