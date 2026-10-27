@@ -5,11 +5,11 @@ document.addEventListener('DOMContentLoaded', function() {
         e.preventDefault();
 
         // Step 1: Open the resume in a new tab
-        const viewLink = 'https://drive.google.com/file/d/1up6odh7cicnOU5cZHEDMp57z-e2x2O1T/view?usp=sharing';
+        const viewLink = 'https://drive.google.com/file/d/18l_7Qk-jVmhZ9psRF_cCls2lrysMI6Kp/view?usp=sharing';
         window.open(viewLink, '_blank');
 
         // Step 2: Trigger direct download
-        const fileId = '1up6odh7cicnOU5cZHEDMp57z-e2x2O1T';
+        const fileId = '18l_7Qk-jVmhZ9psRF_cCls2lrysMI6Kp';
         const downloadURL = `https://drive.google.com/uc?export=download&id=${fileId}`;
 
         setTimeout(() => {
